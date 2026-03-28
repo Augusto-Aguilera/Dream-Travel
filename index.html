@@ -35,21 +35,15 @@
         <div class="destinos">
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="París">
-                <div class="card-info">
-                    <h3>París</h3>
-                </div>
+                <div class="card-info"><h3>París</h3></div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1" alt="Alpes">
-                <div class="card-info">
-                    <h3>Alpes</h3>
-                </div>
+                <div class="card-info"><h3>Alpes</h3></div>
             </div>
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Maldivas">
-                <div class="card-info">
-                    <h3>Maldivas</h3>
-                </div>
+                <div class="card-info"><h3>Maldivas</h3></div>
             </div>
         </div>
     </section>
@@ -80,17 +74,17 @@
         <div class="testimonios-grid">
             <div class="testimonio-card">
                 <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070" alt="Viajero 1">
-                <p>"Increíble experiencia en París. Todo estuvo perfectamente organizado, desde el hotel hasta los tours."</p>
+                <p>"Increíble experiencia en París. Todo estuvo perfectamente organizado."</p>
                 <h4>- Elena García</h4>
             </div>
             <div class="testimonio-card">
                 <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070" alt="Viajero 2">
-                <p>"Los Alpes superaron mis expectativas. La guía de DreamTravel fue fundamental para disfrutar la montaña."</p>
+                <p>"Los Alpes superaron mis expectativas. La guía fue fundamental."</p>
                 <h4>- Marcos López</h4>
             </div>
             <div class="testimonio-card">
                 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2070" alt="Viajero 3">
-                <p>"Maldivas fue un sueño hecho realidad. El resort premium que nos recomendaron fue simplemente perfecto."</p>
+                <p>"Maldivas fue un sueño hecho realidad. El resort fue simplemente perfecto."</p>
                 <h4>- Sofía Torres</h4>
             </div>
         </div>
@@ -99,11 +93,11 @@
     <section id="contacto">
         <h2>Contáctanos</h2>
         <p>Reserva tu próxima aventura.</p>
-        <form>
+        <form id="contactForm">
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Tu email" required>
-            <textarea placeholder="Escribe tu mensaje" rows="5"></textarea>
-            <button type="submit" class="btn-submit">Enviar mensaje</button>
+            <textarea placeholder="Escribe tu mensaje" rows="5" required></textarea>
+            <button type="submit" id="submitBtn" class="btn-submit">Enviar mensaje</button>
         </form>
     </section>
 
@@ -115,6 +109,31 @@
         <p>® Patric Aguilera</p>
         <p>© 2026 DreamTravel</p>
     </footer>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const btn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+            
+            // Efecto visual en el botón
+            btn.innerText = 'Enviando...';
+            btn.style.backgroundColor = '#ccc';
+            btn.disabled = true;
+
+            // Simulamos el envío (2 segundos de espera)
+            setTimeout(() => {
+                alert('¡Gracias por contactar a DreamTravel! Tu mensaje ha sido enviado con éxito. Nos comunicaremos contigo a la brevedad.');
+                
+                // Resetear el formulario y el botón
+                form.reset();
+                btn.innerText = 'Enviar mensaje';
+                btn.style.backgroundColor = '#e63946';
+                btn.disabled = false;
+            }, 2000);
+        });
+    </script>
 
 </body>
 </html>

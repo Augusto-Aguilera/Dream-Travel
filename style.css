@@ -1,5 +1,4 @@
-/* --- TODAS LAS REGLAS ANTERIORES SE MANTIENEN IGUAL --- */
-
+/* --- CONFIGURACIÓN BASE --- */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -9,6 +8,7 @@ body {
     line-height: 1.6;
 }
 
+/* --- NAVEGACIÓN --- */
 nav {
     display: flex;
     justify-content: space-between;
@@ -28,10 +28,25 @@ nav {
     font-size: 28px;
 }
 
-nav ul { display: flex; list-style: none; gap: 30px; margin: 0; }
-nav a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
-nav a:hover { color: #e63946; }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+}
 
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #e63946;
+}
+
+/* --- HERO SECTION --- */
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                 url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
@@ -43,12 +58,18 @@ nav a:hover { color: #e63946; }
     padding: 180px 20px;
 }
 
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 65px; margin-bottom: 15px; }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    margin-bottom: 15px;
+}
 
+/* --- SECCIÓN DESTINOS (Mapamundi) --- */
 #destinos {
     background-color: #ffffff;
     background-image: url("https://www.transparenttextures.com/patterns/world-map.png");
     padding: 100px 20px;
+    text-align: center;
 }
 
 .destinos {
@@ -65,15 +86,30 @@ nav a:hover { color: #e63946; }
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: 0.4s;
+    position: relative;
 }
 
-.card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
-.card:hover { transform: translateY(-10px); }
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    transition: 0.5s;
+}
 
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- SECCIÓN PAQUETES (Pergamino) --- */
 #paquetes {
     background-color: #f4ece4;
     background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
     padding: 100px 20px;
+    text-align: center;
 }
 
 .paquetes {
@@ -92,11 +128,16 @@ nav a:hover { color: #e63946; }
     transition: 0.4s;
 }
 
-.paquete:hover { border: 1px solid #e63946; }
+.paquete:hover {
+    border: 1px solid #e63946;
+    transform: translateY(-5px);
+}
 
+/* --- TESTIMONIOS --- */
 #testimonios {
     padding: 100px 20px;
     background: #ffffff;
+    text-align: center;
 }
 
 .testimonios-grid {
@@ -123,19 +164,11 @@ nav a:hover { color: #e63946; }
     border: 3px solid #e63946;
 }
 
-.testimonio-card p {
-    font-style: italic;
-    color: #555;
-    margin-bottom: 15px;
-}
-
-.testimonio-card h4 {
-    color: #1d3557;
-    font-weight: 600;
-}
-
+/* --- CONTACTO (Azul Profundo) --- */
 #contacto {
     background: radial-gradient(circle, #1d3557 0%, #0a192f 100%);
+    padding: 100px 20px;
+    text-align: center;
     color: white;
 }
 
@@ -157,9 +190,12 @@ form {
 input, textarea {
     padding: 15px;
     border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.9);
+    font-family: inherit;
 }
 
+/* --- BOTONES Y TÍTULOS --- */
 .btn, .btn-submit, .paquete button {
     background: #e63946;
     color: white;
@@ -171,7 +207,7 @@ input, textarea {
     transition: 0.3s;
 }
 
-.btn:hover, .btn-submit:hover, .paquete button:hover { background: #c1121f; }
+.btn:hover, .btn-submit:hover { background: #c1121f; }
 
 h2 {
     font-family: 'Playfair Display', serif;
@@ -187,9 +223,7 @@ h2::after {
     position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
 }
 
-footer { background: #0a192f; color: white; padding: 50px 20px; text-align: center; }
-
-/* --- NUEVO: ESTILOS BOTÓN WHATSAPP --- */
+/* --- BOTÓN WHATSAPP CORREGIDO --- */
 .whatsapp-float {
     position: fixed;
     width: 60px;
@@ -197,27 +231,22 @@ footer { background: #0a192f; color: white; padding: 50px 20px; text-align: cent
     bottom: 40px;
     right: 40px;
     background-color: #25d366;
-    color: #FFF;
     border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    z-index: 2000;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+    z-index: 2000;
     transition: 0.3s;
     animation: pulse-whatsapp 2s infinite;
 }
 
 .whatsapp-float img {
-    width: 35px;
+    width: 35px; /* Tamaño controlado para que no se desvirtúe */
+    height: 35px;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #128c7e;
-}
+.whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
 @keyframes pulse-whatsapp {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
@@ -225,13 +254,4 @@ footer { background: #0a192f; color: white; padding: 50px 20px; text-align: cent
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* --- RESPONSIVE WHATSAPP --- */
-@media (max-width: 768px) {
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-    }
-    .whatsapp-float img { width: 30px; }
-}
+footer { background: #0a192f; color: white; padding: 50px 20px; text-align: center; }

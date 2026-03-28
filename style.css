@@ -1,0 +1,166 @@
+/* --- BASE --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #fdfdfd;
+    color: #333;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* --- NAV --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    color: #1d3557;
+    margin: 0;
+    font-size: 28px;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; margin: 0; }
+nav a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+nav a:hover { color: #e63946; }
+
+/* --- HERO --- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    padding: 180px 20px;
+}
+
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 65px; margin-bottom: 15px; }
+
+/* --- SECCIÓN DESTINOS (Fondo Mapamundi Sutil) --- */
+#destinos {
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/world-map.png");
+    padding: 100px 20px;
+}
+
+.destinos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card img { width: 100%; height: 350px; object-fit: cover; transition: 0.5s; }
+.card:hover { transform: translateY(-10px); }
+.card:hover img { transform: scale(1.1); }
+
+/* --- SECCIÓN PAQUETES (Fondo Pergamino/Papel Antiguo) --- */
+#paquetes {
+    background-color: #f4ece4;
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    padding: 100px 20px;
+    border-top: 1px solid #e0d5cb;
+    border-bottom: 1px solid #e0d5cb;
+}
+
+.paquetes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.paquete {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.paquete:hover { transform: translateY(-10px); border: 1px solid #e63946; }
+
+/* --- SECCIÓN CONTACTO (Fondo Azul Océano Profundo) --- */
+#contacto {
+    background: radial-gradient(circle, #1d3557 0%, #0a192f 100%);
+    color: white;
+}
+
+#contacto h2 { color: white; }
+
+form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+input, textarea {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    font-family: inherit;
+}
+
+/* --- BOTONES Y TÍTULOS --- */
+.btn, .btn-submit {
+    background: #e63946;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover, .btn-submit:hover { background: #c1121f; transform: scale(1.05); }
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #1d3557;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: ''; width: 60px; height: 3px; background: #e63946;
+    position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
+}
+
+footer {
+    background: #0a192f;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
